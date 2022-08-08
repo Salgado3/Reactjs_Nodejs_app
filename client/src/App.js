@@ -7,14 +7,15 @@ function App() {
   React.useEffect(() => {
     fetch("/api")
       .then((res) => res.json())
-      .then((data) => setData(data.message));
+      .then((data) => setData(data.message))
+      .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="App">
       <Navbar />
       <header className="App-header">
-        <p> Hello World </p>
+        <p> Hello World!!!</p>
         <p>{!data ? "Loading..." : data}</p>
       </header>
     </div>
